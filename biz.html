@@ -472,6 +472,152 @@
   }
   .book-title { font-size: 13px; color: var(--text); }
 
+  /* CASES */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .case-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 24px;
+    transition: all .2s;
+    display: flex; flex-direction: column;
+    min-height: 240px;
+  }
+  .case-card:hover { border-color: var(--orange); background: var(--card-2); }
+  .case-card.featured { grid-column: span 2; min-height: 280px; }
+  .case-period {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 18px;
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(255,85,51,0.1);
+    border: 1px solid rgba(255,85,51,0.3);
+    border-radius: 3px;
+    align-self: flex-start;
+  }
+  .case-card h3 {
+    font-size: 1.05rem; font-weight: 800;
+    color: var(--white); margin-bottom: 14px;
+    text-transform: uppercase; letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .case-card.featured h3 { font-size: 1.4rem; }
+  .case-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 14px;
+  }
+  .case-stat {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    color: var(--muted-2);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 8px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .case-stat b { color: var(--white); font-weight: 700; }
+  .case-content {
+    font-size: 13px; color: var(--muted-2);
+    line-height: 1.55;
+    margin-top: auto;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 40px;
+    transition: all .2s;
+    position: relative;
+  }
+  .testimonial-card:hover { border-color: var(--orange); }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px; left: 32px;
+    font-size: 5rem; color: var(--orange);
+    line-height: 1; opacity: 0.6;
+    font-family: 'Onest', serif;
+  }
+  .testimonial-quote {
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin: 32px 0 28px;
+    padding-top: 16px;
+    font-weight: 500;
+  }
+  .testimonial-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .testimonial-meta h4 {
+    font-size: 14px; font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .testimonial-meta p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .testimonial-link {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--orange);
+    text-decoration: none;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 8px 14px;
+    border: 1px solid var(--orange);
+    border-radius: 3px;
+    transition: all .15s;
+  }
+  .testimonial-link:hover {
+    background: var(--orange); color: #000;
+  }
+
+  /* PARTICIPANTS */
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .logo-item {
+    padding: 28px 16px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px; font-weight: 700;
+    color: var(--muted-2);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    transition: all .2s;
+    background: var(--card);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 80px;
+  }
+  .logo-item:hover { color: var(--orange); background: var(--card-2); }
+  .logo-item:nth-child(6n) { border-right: none; }
+  .logos-grid .logo-item:nth-last-child(-n+6) { border-bottom: none; }
+
   /* FORMAT */
   .format-grid {
     display: grid;
@@ -602,6 +748,13 @@
   /* RESPONSIVE */
   @media (max-width: 1100px) {
     .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-card.featured { grid-column: span 2; }
+    .logos-grid { grid-template-columns: repeat(3, 1fr); }
+    .logo-item:nth-child(6n) { border-right: 1px solid var(--border); }
+    .logo-item:nth-child(3n) { border-right: none; }
+    .logos-grid .logo-item:nth-last-child(-n+6) { border-bottom: 1px solid var(--border); }
+    .logos-grid .logo-item:nth-last-child(-n+3) { border-bottom: none; }
   }
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
@@ -623,6 +776,16 @@
     .outcome-item:last-child { border-bottom: none; }
     .days-grid { grid-template-columns: 1fr; }
     .speaker-wrap { grid-template-columns: 1fr; gap: 32px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-card.featured { grid-column: span 1; min-height: auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-card { padding: 32px 24px; }
+    .testimonial-card::before { left: 18px; font-size: 4rem; }
+    .logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .logo-item:nth-child(3n) { border-right: 1px solid var(--border); }
+    .logo-item:nth-child(2n) { border-right: none; }
+    .logos-grid .logo-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+    .logos-grid .logo-item:nth-last-child(-n+2) { border-bottom: none; }
     .format-grid { grid-template-columns: 1fr; }
     .cta-box { padding: 48px 24px; }
     .cta-form { flex-direction: column; }
@@ -637,10 +800,11 @@
 <nav>
   <a href="index.html" class="nav-logo">KARPOV<span>.</span>COURSES</a>
   <ul class="nav-links">
-    <li><a href="#problem">Сейчас</a></li>
     <li><a href="#audience">Аудитория</a></li>
     <li><a href="#program">Программа</a></li>
     <li><a href="#speaker">Спикер</a></li>
+    <li><a href="#cases">Кейсы</a></li>
+    <li><a href="#testimonials">Отзывы</a></li>
     <li><a href="#format">Формат</a></li>
   </ul>
   <a href="#register" class="nav-cta">Заявка</a>
@@ -864,7 +1028,7 @@
       <img src="https://shuvaev.com/assets/brand/author_photo.jpg"
            alt="Ярослав Шуваев" class="speaker-photo"
            onerror="this.style.background='#1e2127'; this.style.minHeight='420px';">
-      <div class="speaker-stamp">14K выпускников</div>
+      <div class="speaker-stamp">25+ компаний</div>
     </div>
     <div class="speaker-info">
       <h3>Ярослав<br>Шуваев</h3>
@@ -873,7 +1037,10 @@
         20+ лет в технологическом секторе. Строил продукты и внедрял AI-системы в Альфа-Банке, Ак Барс Банке, МТС, Viasat Global. Говорит о AI на языке топ-менеджмента — не кода, а прибыли и рисков.
       </p>
       <p class="speaker-bio">
-        Директор ИИ-программ karpov.courses по направлению AI-агентов. Создатель методологии SDP — шкалы зрелости автономных процессов. Основатель uxacademy.ru. Автор трёх книг, изданных крупнейшим издательством страны.
+        Директор ИИ-программ karpov.courses по направлению AI-агентов. Создатель методологии SDP — шкалы зрелости автономных процессов. Основатель Panteo.ai — ИИ в закрытом контуре. Автор трёх книг, изданных крупнейшим издательством страны.
+      </p>
+      <p class="speaker-bio">
+        Преподаёт в РАНХиГС (MBA «Трансформация»), Университете «Иннополис», вёл программы в Британской высшей школе дизайна. Обучал команды Сбера, ВТБ, ВЭБ, Альфа-Банка, Ак Барс Банка, Райффайзена, Росбанка, Т-Банка, МТС, Ростелекома, Газпром нефти, Северстали, Х5 Ритейл, Самоката, Рольф, КРОК, 1С Рарус, Систэм Электрик, Халык банка и других — 25+ компаний.
       </p>
       <div class="speaker-tags">
         <span class="speaker-tag">AI-агенты</span>
@@ -898,6 +1065,169 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="section-head">
+    <div class="section-label">// Кейсы</div>
+    <div>
+      <h2 class="section-title">Уже проведено<br>в крупном бизнесе</h2>
+      <p class="section-sub">Закрытые программы для топ-менеджмента банков и корпораций. Включая внедрения с измеримыми результатами.</p>
+    </div>
+  </div>
+
+  <div class="cases-grid">
+    <div class="case-card featured">
+      <span class="case-period">2026</span>
+      <h3>Сбер — Аналитика<br>данных для руководителя</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>200</b> участников / поток</span>
+        <span class="case-stat">Топ-600</span>
+      </div>
+      <p class="case-content">Программа для уровня топ-600 и «минус 1». Ландшафт данных, BI-дашборды, GigaChat для аналитики, тренажёр «дерево метрик», финмодель проекта. Авторский фреймворк Data Category Map.</p>
+    </div>
+
+    <div class="case-card featured">
+      <span class="case-period">2025–2026</span>
+      <h3>ВТБ — Модульная<br>программа по ИИ</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>30</b> участников</span>
+        <span class="case-stat">6 SCORM-модулей</span>
+      </div>
+      <p class="case-content">ИИ для риск-функции банка. Шесть модулей: OpRisk, Anti-Fraud, санкции и геориски, Integrated Risk, Risk-Controlling, Data &amp; Model Risk. SCORM-совместимая программа в LMS банка.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Март 2025</span>
+      <h3>Рольф — ИИ-интенсив<br>для топ-менеджмента</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>30</b> участников</span>
+      </div>
+      <p class="case-content">Очный 2-дневный интенсив для топ-5 автодилера РФ. На выходе — 4 дорожные карты внедрения ИИ. Программа «ИИ-рычаг».</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">2025</span>
+      <h3>Райффайзенбанк —<br>ИИ для управления рисками</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>30</b> участников</span>
+        <span class="case-stat">Риск-команда</span>
+      </div>
+      <p class="case-content">Шесть направлений риск-функции. SDP-шкала зрелости, разбор целевых кейсов, воркшопная фасилитация. На выходе — приоритизированные инициативы и дорожная карта 3/6/9/12+ мес.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Апрель 2026</span>
+      <h3>Аметист Групп —<br>ИИ для управления</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>30</b> участников</span>
+      </div>
+      <p class="case-content">Топ-команда девелоперской компании. Возможности и ограничения ИИ, Construction Vision Demo (агент анализирует фотографии стройплощадки и сопоставляет с графиком Ганта).</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">AI Café</span>
+      <h3>Международный<br>банк топ-20</h3>
+      <div class="case-meta">
+        <span class="case-stat"><b>100+</b> участников</span>
+        <span class="case-stat">12 инициатив</span>
+      </div>
+      <p class="case-content">Авторский формат AI Café / World Café. Гибридный (зал + онлайн), 6 тем за день, 12 инициатив на выходе.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Внедрение · L1</span>
+      <h3>Ак Барс Банк — Aimee</h3>
+      <div class="case-meta">
+        <span class="case-stat">−60% ресурс</span>
+        <span class="case-stat">×6 пропуск</span>
+      </div>
+      <p class="case-content">Автоматизация контакт-центра. AHT 17:54 → 04:13, решения в чате +20%, экономия ресурса оператора 60%, пропускная способность ×6.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Внедрение · L4</span>
+      <h3>Газпром Нефть — TenderScan</h3>
+      <div class="case-meta">
+        <span class="case-stat">+10% эфф.</span>
+        <span class="case-stat">~6000 заявок/год</span>
+      </div>
+      <p class="case-content">ИИ-скрининг закупочных заявок 223/44-ФЗ. OCR + LLM + Structured Output. 27% подходящих заявок выявляется автоматически. Получено благодарственное письмо.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-head">
+    <div class="section-label">// Благодарности</div>
+    <div>
+      <h2 class="section-title">Что говорят<br>после</h2>
+      <p class="section-sub">Письма от организаций, для которых проводилось обучение и пилотные внедрения.</p>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Отдельно хотим отметить зрелость технологического решения и нацеленность на создание ценности для корпоративных заказчиков. Рассматриваем дальнейшее масштабирование Panteo.ai.</p>
+      <div class="testimonial-meta">
+        <div>
+          <h4>ПАО «Газпром нефть»</h4>
+          <p>StartupDrive · 2025</p>
+        </div>
+        <a href="https://shuvaev.com/assets/testimonials/gazpromneft_startupdrive_pismo.png" target="_blank" rel="noopener" class="testimonial-link">Смотреть письмо →</a>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Особая признательность спикеру за высокопрофессиональную подачу материала и актуальные примеры использования ИИ в бизнесе. Курс предоставил нам не только знания, но и практические инструменты.</p>
+      <div class="testimonial-meta">
+        <div>
+          <h4>АО «КРДВ»</h4>
+          <p>Декабрь 2025</p>
+        </div>
+        <a href="https://shuvaev.com/assets/testimonials/krdv_blagodarstvennoe_pismo.png" target="_blank" rel="noopener" class="testimonial-link">Смотреть письмо →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPANTS -->
+<section id="participants">
+  <div class="section-head">
+    <div class="section-label">// Доверяют</div>
+    <div>
+      <h2 class="section-title">25+<br>компаний</h2>
+      <p class="section-sub">Где Ярослав проводил обучение и внедрения по ИИ, продуктовому управлению и автономным процессам.</p>
+    </div>
+  </div>
+
+  <div class="logos-grid">
+    <div class="logo-item">Сбер</div>
+    <div class="logo-item">ВТБ</div>
+    <div class="logo-item">ВЭБ</div>
+    <div class="logo-item">Альфа-Банк</div>
+    <div class="logo-item">Ак Барс Банк</div>
+    <div class="logo-item">Райффайзен</div>
+    <div class="logo-item">Росбанк</div>
+    <div class="logo-item">Т-Банк</div>
+    <div class="logo-item">Халык банк</div>
+    <div class="logo-item">Газпром нефть</div>
+    <div class="logo-item">МТС</div>
+    <div class="logo-item">Ростелеком</div>
+    <div class="logo-item">Северсталь</div>
+    <div class="logo-item">Росатом</div>
+    <div class="logo-item">Х5 Retail</div>
+    <div class="logo-item">Самокат</div>
+    <div class="logo-item">Рольф</div>
+    <div class="logo-item">VK</div>
+    <div class="logo-item">КРОК</div>
+    <div class="logo-item">1С Рарус</div>
+    <div class="logo-item">Систэм Электрик</div>
+    <div class="logo-item">Аметист Групп</div>
+    <div class="logo-item">Рамблер</div>
+    <div class="logo-item">+ ещё</div>
   </div>
 </section>
 
