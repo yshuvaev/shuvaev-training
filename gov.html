@@ -408,6 +408,178 @@
     font-size: 13px; color: var(--text);
   }
 
+  /* CASES */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .case-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 24px;
+    transition: all .2s;
+    display: flex; flex-direction: column;
+    min-height: 240px;
+  }
+  .case-card:hover { border-color: var(--orange); background: var(--card-2); }
+  .case-card.featured { grid-column: span 2; min-height: 280px; }
+  .case-period {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 18px;
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(255,85,51,0.1);
+    border: 1px solid rgba(255,85,51,0.3);
+    border-radius: 3px;
+    align-self: flex-start;
+  }
+  .case-card h3 {
+    font-size: 1.05rem; font-weight: 800;
+    color: var(--white); margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .case-card.featured h3 { font-size: 1.4rem; }
+  .case-org {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .case-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 14px;
+  }
+  .case-stat {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    color: var(--muted-2);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 8px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .case-stat b { color: var(--white); font-weight: 700; }
+  .case-content {
+    font-size: 13px; color: var(--muted-2);
+    line-height: 1.55;
+    margin-top: auto;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 40px;
+    transition: all .2s;
+    position: relative;
+  }
+  .testimonial-card:hover { border-color: var(--orange); }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px; left: 32px;
+    font-size: 5rem; color: var(--orange);
+    line-height: 1; opacity: 0.6;
+    font-family: 'Onest', serif;
+  }
+  .testimonial-quote {
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin: 32px 0 28px;
+    padding-top: 16px;
+    font-weight: 500;
+  }
+  .testimonial-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .testimonial-meta h4 {
+    font-size: 14px; font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .testimonial-meta p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .testimonial-link {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--orange);
+    text-decoration: none;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 8px 14px;
+    border: 1px solid var(--orange);
+    border-radius: 3px;
+    transition: all .15s;
+  }
+  .testimonial-link:hover {
+    background: var(--orange); color: #000;
+  }
+
+  /* PARTICIPANTS */
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .logo-item {
+    padding: 28px 16px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px; font-weight: 700;
+    color: var(--muted-2);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    transition: all .2s;
+    background: var(--card);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 80px;
+  }
+  .logo-item:hover { color: var(--orange); background: var(--card-2); }
+  .logo-item:nth-child(6n) { border-right: none; }
+  .logos-grid .logo-item:nth-last-child(-n+6) { border-bottom: none; }
+  .education-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 6px;
+    padding: 28px 32px;
+  }
+  .education-block h3 {
+    font-size: 14px; font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .education-block p {
+    font-size: 14px; color: var(--muted-2);
+    line-height: 1.7;
+  }
+
   /* FORMAT */
   .format-grid {
     display: grid;
@@ -546,6 +718,13 @@
   /* RESPONSIVE */
   @media (max-width: 1100px) {
     .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-card.featured { grid-column: span 2; }
+    .logos-grid { grid-template-columns: repeat(3, 1fr); }
+    .logo-item:nth-child(6n) { border-right: 1px solid var(--border); }
+    .logo-item:nth-child(3n) { border-right: none; }
+    .logos-grid .logo-item:nth-last-child(-n+6) { border-bottom: 1px solid var(--border); }
+    .logos-grid .logo-item:nth-last-child(-n+3) { border-bottom: none; }
   }
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
@@ -565,6 +744,17 @@
     .outcome-item:last-child { border-bottom: none; }
     .days-grid { grid-template-columns: 1fr; }
     .speaker-wrap { grid-template-columns: 1fr; gap: 32px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-card.featured { grid-column: span 1; min-height: auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-card { padding: 32px 24px; }
+    .testimonial-card::before { left: 18px; font-size: 4rem; }
+    .logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .logo-item:nth-child(3n) { border-right: 1px solid var(--border); }
+    .logo-item:nth-child(2n) { border-right: none; }
+    .logos-grid .logo-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+    .logos-grid .logo-item:nth-last-child(-n+2) { border-bottom: none; }
+    .education-block { padding: 24px; }
     .format-grid { grid-template-columns: 1fr; }
     .cta-box { padding: 48px 24px; }
     .cta-form { flex-direction: column; }
@@ -580,9 +770,10 @@
   <a href="index.html" class="nav-logo">KARPOV<span>.</span>COURSES</a>
   <ul class="nav-links">
     <li><a href="#audience">Аудитория</a></li>
-    <li><a href="#outcomes">Результат</a></li>
     <li><a href="#program">Программа</a></li>
     <li><a href="#speaker">Спикер</a></li>
+    <li><a href="#cases">Кейсы</a></li>
+    <li><a href="#testimonials">Отзывы</a></li>
     <li><a href="#format">Формат</a></li>
   </ul>
   <a href="#register" class="nav-cta">Заявка</a>
@@ -803,6 +994,165 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="section-head">
+    <div class="section-label">// Кейсы</div>
+    <div>
+      <h2 class="section-title">Уже проведено<br>в госсекторе</h2>
+      <p class="section-sub">Закрытые форматы для региональных правительств, ведомств и корпораций развития. Подача через СберУниверситет, Минвостокразвития РФ, прямые контракты.</p>
+    </div>
+  </div>
+
+  <div class="cases-grid">
+    <div class="case-card featured">
+      <span class="case-period">Окт—Ноя 2025</span>
+      <h3>КРДВ — Корпорация<br>развития Дальнего Востока</h3>
+      <p class="case-org">При Минвостокразвития РФ</p>
+      <div class="case-meta">
+        <span class="case-stat"><b>60</b> участников</span>
+        <span class="case-stat"><b>4</b> модуля · 8 вебинаров</span>
+        <span class="case-stat">2 ч × 8</span>
+      </div>
+      <p class="case-content">Анализ данных, визуализация, дорожная карта ИИ, защита проектов. Получено благодарственное письмо в декабре 2025.</p>
+    </div>
+
+    <div class="case-card featured">
+      <span class="case-period">Апрель—Май 2026</span>
+      <h3>Камчатский край</h3>
+      <p class="case-org">Правительство региона ·<br>Через СберУниверситет</p>
+      <div class="case-meta">
+        <span class="case-stat">Очно · 1 день · 6 ч</span>
+        <span class="case-stat"><b>8</b> практических кейсов</span>
+      </div>
+      <p class="case-content">Тексты, документы, финмодели, бизнес-планы, индикаторы риска, отчётность. Доклад для Губернатора с генерацией презентации.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Март 2026</span>
+      <h3>Ставропольский край</h3>
+      <p class="case-org">Правительство региона</p>
+      <div class="case-meta">
+        <span class="case-stat">Очно · 1.5 ч + Q&amp;A</span>
+      </div>
+      <p class="case-content">ИИ для госсектора: технологии, кейсы, данные, контуры безопасности. Через СберУниверситет.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Апрель 2026</span>
+      <h3>Еврейская<br>автономная область</h3>
+      <p class="case-org">Правительство региона</p>
+      <div class="case-meta">
+        <span class="case-stat">Через СберУниверситет</span>
+      </div>
+      <p class="case-content">ИИ для органов власти: прикладные сценарии работы с документами и обращениями.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Реализовано</span>
+      <h3>Администрация<br>Президента РФ</h3>
+      <p class="case-org">ЦЕМАК</p>
+      <p class="case-content">Интеллектуальная обработка закупочных материалов, извлечение структурированных данных.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Реализовано</span>
+      <h3>Минтарифов<br>Воронежской области</h3>
+      <p class="case-org">Региональное министерство</p>
+      <p class="case-content">ИИ-анализ подтверждающей документации снабжающих организаций.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">Реализовано</span>
+      <h3>Минздрав<br>Великого Новгорода</h3>
+      <p class="case-org">Региональное министерство</p>
+      <p class="case-content">Копилот для закупок 44-ФЗ. Автоматизация протоколирования и контроля исполнения.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-period">+10% эфф.</span>
+      <h3>Газпром Нефть</h3>
+      <p class="case-org">Пилот TenderScan ·<br>StartupDrive</p>
+      <p class="case-content">Анализ закупочной документации 223/44-ФЗ, OCR сканов, проверка соответствия. Получено благодарственное письмо.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-head">
+    <div class="section-label">// Благодарности</div>
+    <div>
+      <h2 class="section-title">Что говорят<br>после</h2>
+      <p class="section-sub">Письма от организаций, для которых проводилось обучение и пилотные внедрения. Открываются в новой вкладке.</p>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Особая признательность спикеру за высокопрофессиональную подачу материала и актуальные примеры использования ИИ в бизнесе.</p>
+      <div class="testimonial-meta">
+        <div>
+          <h4>АО «КРДВ»</h4>
+          <p>При Минвостокразвития РФ · Декабрь 2025</p>
+        </div>
+        <a href="https://shuvaev.com/assets/testimonials/krdv_blagodarstvennoe_pismo.png" target="_blank" rel="noopener" class="testimonial-link">Смотреть письмо →</a>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Отдельно хотим отметить зрелость технологического решения и нацеленность на создание ценности для корпоративных заказчиков.</p>
+      <div class="testimonial-meta">
+        <div>
+          <h4>ПАО «Газпром нефть»</h4>
+          <p>StartupDrive · 2025</p>
+        </div>
+        <a href="https://shuvaev.com/assets/testimonials/gazpromneft_startupdrive_pismo.png" target="_blank" rel="noopener" class="testimonial-link">Смотреть письмо →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPANTS -->
+<section id="participants">
+  <div class="section-head">
+    <div class="section-label">// Доверяют</div>
+    <div>
+      <h2 class="section-title">25+<br>организаций<br>прошли обучение</h2>
+      <p class="section-sub">У Ярослава за плечами обучение для коммерческих и государственных команд по AI, продуктовому управлению и автономным процессам.</p>
+    </div>
+  </div>
+
+  <div class="logos-grid">
+    <div class="logo-item">КРДВ</div>
+    <div class="logo-item">Минвостокразвития</div>
+    <div class="logo-item">АП РФ</div>
+    <div class="logo-item">Сбер</div>
+    <div class="logo-item">ВЭБ</div>
+    <div class="logo-item">МТС</div>
+    <div class="logo-item">Альфа-Банк</div>
+    <div class="logo-item">Газпром нефть</div>
+    <div class="logo-item">Северсталь</div>
+    <div class="logo-item">Ростелеком</div>
+    <div class="logo-item">Х5 Ритейл</div>
+    <div class="logo-item">Райффайзен</div>
+    <div class="logo-item">Т-Банк</div>
+    <div class="logo-item">Росбанк</div>
+    <div class="logo-item">Ак Барс Банк</div>
+    <div class="logo-item">КРОК</div>
+    <div class="logo-item">Самокат</div>
+    <div class="logo-item">Рамблер</div>
+    <div class="logo-item">1С Рарус</div>
+    <div class="logo-item">Систэм Электрик</div>
+    <div class="logo-item">Халык банк</div>
+    <div class="logo-item">+ ещё</div>
+  </div>
+
+  <div class="education-block">
+    <h3>Преподавательская деятельность</h3>
+    <p>РАНХиГС (MBA «Трансформация») · Университет «Иннополис» · Британская высшая школа дизайна (2015–2021, куратор UX/UI) · uxacademy.ru — основатель, 14 000+ выпускников</p>
   </div>
 </section>
 
