@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Программы Шуваев</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #060610; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .wrap { text-align: center; padding: 40px; }
+  h1 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+  p { color: #888; margin-bottom: 40px; }
+  .cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+  .card { background: #0D0D1E; border: 1px solid #1E1E3A; border-radius: 16px; padding: 32px 40px; max-width: 280px; text-decoration: none; color: inherit; transition: border-color .3s; cursor: pointer; }
+  .card:hover { border-color: #6B2FFA; }
+  .card .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6B2FFA; margin-bottom: 12px; }
+  .card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #888; }
+  .card.gov .tag { color: #C9A84C; }
+  .card.gov:hover { border-color: #C9A84C; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Обучающие программы</h1>
+  <p>Выберите программу</p>
+  <div class="cards">
+    <a href="gov.html" class="card gov">
+      <div class="tag">Государственное управление</div>
+      <h2>Для госсектора</h2>
+      <p>Руководители министерств, ведомств и госкорпораций</p>
+    </a>
+    <a href="biz.html" class="card">
+      <div class="tag">Крупный бизнес</div>
+      <h2>Для топ-бизнеса</h2>
+      <p>Собственники, CEO и C-suite крупных компаний</p>
+    </a>
+  </div>
+</div>
+</body>
+</html>
